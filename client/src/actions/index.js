@@ -1,3 +1,4 @@
+import streams from '../api/streams';
 import {CHECK_AUTH, SIGN_IN, SIGN_OUT} from './types';
 
 export const trySignIn = () => async dispatch => {
@@ -52,3 +53,7 @@ export const trySignOut = () => async dispatch =>{
 
  }
 
+
+ export const createStream = formProps => async dispatch =>{
+      streams.post('/streams', formProps);
+ }

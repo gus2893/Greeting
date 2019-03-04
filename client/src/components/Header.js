@@ -12,8 +12,9 @@ const Header = () =>{
 
             <Menu.Item position='right'>
                 <Link to='/'> All Streams</Link>
-                <GoogleAuth/>
+                
             </Menu.Item>
+            <GoogleAuth/>
         </Menu>
     );
 }
