@@ -96,7 +96,7 @@ export const trySignOut = () => async dispatch =>{
  }
 
  export const deleteStreams = id => async dispatch =>{
-     const reponse = await streams.delete(`/streans/${id}`);
+     await streams.delete(`/streans/${id}`);
      dispatch({
          type: DELETE_STREAM,
          payload: id
