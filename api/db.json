@@ -4,6 +4,24 @@
       "title": "Gustavo's Stream",
       "description": "this is a great stream",
       "id": 1
+    },
+    {
+      "title": "KG3's Stream",
+      "description": "This is a react js stream",
+      "userId": null,
+      "id": 2
+    },
+    {
+      "title": "King Gooooooose stream",
+      "description": "This is an angular stream",
+      "userId": "104609873656626146220",
+      "id": 3
+    },
+    {
+      "title": "Programmatic NAv",
+      "description": "This is a test to kdjfahskldfhaksdunlvs",
+      "userId": "104609873656626146220",
+      "id": 4
     }
   ]
 }

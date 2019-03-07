@@ -1,4 +1,5 @@
 import streams from '../api/streams';
+import history from '../history';
 import {
     CHECK_AUTH, 
     SIGN_IN, SIGN_OUT, 
@@ -69,6 +70,7 @@ export const trySignOut = () => async dispatch =>{
         type: CREATE_STREAM,
         payload: response.data
     })
+    history.push('/');
  }
 
  export const fetchStreams = () => async dispatch =>{
