@@ -3,27 +3,42 @@ import { Card, Icon, Image, Divider } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 
 
-const PostCard = props => (
-  <Card>
-    <Image src={props.imgUri} />
-    <Card.Content>
-      <Card.Header>{props.name}</Card.Header>
-      <Card.Meta>
-        <span className='date'>{props.currentTime}</span>
-      </Card.Meta>
-      <Card.Description>{props.message}</Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <div>
-        <Icon name='globe' />
-        {props.userLocation}
-      </div>
-      <Divider/>
-          <Link to={`/Greeting/delete/${props.id}`}className="ui button negative" isHidden={props.owner}>
-              Delete
-          </Link>   
-    </Card.Content>
-  </Card>
-)
+class PostCard extends React.Component {
+
+  renderDelete(){
+    if(this.props.owner){  
+      return(
+      <Link to={`/Greeting/delete/${this.props.id}`}className="ui button negative" >
+        Delete
+      </Link>
+      )      
+
+    }
+  }
+  render(){
+    return(
+      <Card>
+      <Image src={this.props.imgUri} />
+      <Card.Content>
+        <Card.Header>{this.props.name}</Card.Header>
+        <Card.Meta>
+          <span className='date'>{this.props.currentTime}</span>
+        </Card.Meta>
+        <Card.Description>{this.props.message}</Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        <div>
+          <Icon name='globe' />
+          {this.props.userLocation}
+        </div>
+        <Divider/>
+          {this.renderDelete()}
+      </Card.Content>
+    </Card>
+
+    )
+  }
+ 
+}
 
 export default PostCard;

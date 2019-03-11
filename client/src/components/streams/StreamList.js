@@ -12,9 +12,11 @@ class StreamList extends React.Component{
 
     renderAdmin = (stream) =>{
         if(stream.userId === this.props.currentUserId){
+            console.log(stream.userId);
+            console.log(this.props.currentUserId);
             return true;
         }
-
+        console.log("false");
         return false;
     }
 
