@@ -15,6 +15,16 @@ class PostCard extends React.Component {
 
     }
   }
+
+  renderLocation(){
+   if(this.props.userLocation){
+    return this.props.userLocation;
+   }
+    
+  return "Unknown Location";
+
+  }
+
   render(){
     return(
       <Card>
@@ -29,7 +39,7 @@ class PostCard extends React.Component {
       <Card.Content extra>
         <div>
           <Icon name='globe' />
-          {this.props.userLocation}
+          {this.renderLocation()}
         </div>
         <Divider/>
           {this.renderDelete()}
