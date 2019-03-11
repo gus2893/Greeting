@@ -16,10 +16,10 @@ class App extends Component {
         <Router history={history}>
             <div>
               <Header/>
-              <Route path="/" exact component={StreamList}/>
-              <Route path="/streams/new" exact component={CameraComponent}/>
-              <Route path="/streams/edit/:id" exact component={StreamEdit}/>
-              <Route path="/streams/delete/:id" exact component={StreamDelete}/>
+              <Route path="/Greeting/" exact component={StreamList}/>
+              <Route path="/Greeting/streams/new" exact component={CameraComponent}/>
+              <Route path="/Greeting/streams/edit/:id" exact component={StreamEdit}/>
+              <Route path="/Greeting/streams/delete/:id" exact component={StreamDelete}/>
             </div>
         </Router>
       </Container> 
