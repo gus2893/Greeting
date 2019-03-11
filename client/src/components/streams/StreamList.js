@@ -12,9 +12,10 @@ class StreamList extends React.Component{
 
     renderAdmin = (stream) =>{
         if(stream.userId === this.props.currentUserId){
-
+            return true;
         }
 
+        return false;
     }
 
     renderCreate = () =>{
@@ -42,8 +43,9 @@ class StreamList extends React.Component{
                 message={stream.description}
                 userLocation={stream.userLocation}
                 currentTime={stream.currentTime}
+                owner={this.renderAdmin(stream)}
                 />
-                {this.renderAdmin(stream)}
+                
                     
             </div>
             );

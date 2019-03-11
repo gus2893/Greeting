@@ -19,7 +19,7 @@ const PostCard = props => (
         {props.userLocation}
       </div>
       <Divider/>
-          <Link to={`/Greeting/delete/${props.id}`}className="ui button negative" display={false}>
+          <Link to={`/Greeting/delete/${props.id}`}className="ui button negative" isHidden={props.owner}>
               Delete
           </Link>   
     </Card.Content>
