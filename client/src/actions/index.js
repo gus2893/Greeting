@@ -45,6 +45,7 @@ export const trySignOut = () => async dispatch =>{
  }
 
  export const checkAuth = () => async dispatch =>{
+     console.log("checking auth");
     await window.gapi.load('client:auth2', ()=> {
         window.gapi.client.init({
             clientId: '485197595118-pph7brngg39s0fd3qeluh1bvufnr7pne.apps.googleusercontent.com',
