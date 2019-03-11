@@ -19,7 +19,7 @@ const PostCard = props => (
         {props.userLocation}
       </div>
       <Divider/>
-          <Link to={`/streams/delete/${props.id}`}className="ui button negative" display={false}>
+          <Link to={`/Greeting/delete/${props.id}`}className="ui button negative" display={false}>
               Delete
           </Link>   
     </Card.Content>

@@ -12,7 +12,7 @@ class CameraComponent extends Component {
 
       componentDidUpdate = () =>{
         if(this.props.isSignedIn === false){
-          history.push('/');
+          history.push('/Greeting/');
         }
       }
 

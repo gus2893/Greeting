@@ -98,7 +98,7 @@ export const trySignOut = () => async dispatch =>{
          type: EDIT_STREAM,
          payload: response.data
      });
-     history.push('/');
+     history.push('/Greeting/');
  }
 
  export const deleteStream = id => async dispatch =>{
@@ -107,5 +107,5 @@ export const trySignOut = () => async dispatch =>{
          type: DELETE_STREAM,
          payload: id
      })
-     history.push('/');
+     history.push('/Greeting/');
  }
