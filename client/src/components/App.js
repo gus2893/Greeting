@@ -17,9 +17,9 @@ class App extends Component {
             <div>
               <Header/>
               <Route path="/Greeting/" exact component={StreamList}/>
-              <Route path="/Greeting/streams/new" exact component={CameraComponent}/>
-              <Route path="/Greeting/streams/edit/:id" exact component={StreamEdit}/>
-              <Route path="/Greeting/streams/delete/:id" exact component={StreamDelete}/>
+              <Route path="/Greeting/new" exact component={CameraComponent}/>
+              <Route path="/Greeting/edit/:id" exact component={StreamEdit}/>
+              <Route path="/Greeting/delete/:id" exact component={StreamDelete}/>
             </div>
         </Router>
       </Container> 
