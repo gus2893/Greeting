@@ -8,8 +8,8 @@ import Geocode from "react-geocode";
 class CreatePost extends React.Component {
     state= {userLocation : null}
 
-    componentDidMount = () =>{
-      Geocode.setApiKey("AIzaSyBKAdl5OeYVrIQH5N3MROFM8dP924VL3ZY");
+    componentDidMount= () =>{
+      Geocode.setApiKey("AIzaSyCvgu5XGtZ0yFbFsKMAu2LkTN7BusufKoU");
       window.navigator.geolocation.getCurrentPosition(
         position => {
           console.log(position);
