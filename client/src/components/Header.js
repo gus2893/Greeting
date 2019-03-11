@@ -7,7 +7,7 @@ const Header = () =>{
     return(
         <Menu secondary pointing>
             <Menu.Item>
-                <Link to='/'>All Greetings</Link>
+                <Link to='/Greeting'>All Greetings</Link>
             </Menu.Item>
             <Menu.Item position='right'>
                 <GoogleAuth/>
