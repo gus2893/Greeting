@@ -63,9 +63,11 @@ export const trySignOut = () => async dispatch =>{
  }
 
 
- export const createStream = formProps => async (dispatch, getState) =>{
+ export const createStream = (formProps, imgUri, userLocation) => async (dispatch, getState) =>{
     const {userId} = getState().userInfo;
-    const response = await streams.post('/streams', {...formProps, userId});
+    const now = new Date();
+    const currentTime = now.toDateString();
+    const response = await streams.post('/streams', {...formProps, userId, imgUri,userLocation,currentTime });
     dispatch({
         type: CREATE_STREAM,
         payload: response.data
@@ -91,17 +93,19 @@ export const trySignOut = () => async dispatch =>{
  }
 
  export const editStream = (id, formProps) => async dispatch => {
-     const response = await streams.put(`/streams/${id}`, formProps);
+     const response = await streams.patch(`/streams/${id}`, formProps);
      dispatch({
          type: EDIT_STREAM,
          payload: response.data
-     })
+     });
+     history.push('/');
  }
 
- export const deleteStreams = id => async dispatch =>{
-     await streams.delete(`/streans/${id}`);
+ export const deleteStream = id => async dispatch =>{
+     await streams.delete(`/streams/${id}`);
      dispatch({
          type: DELETE_STREAM,
          payload: id
      })
+     history.push('/');
  }

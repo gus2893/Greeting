@@ -6,15 +6,13 @@ import GoogleAuth from './GoogleAuth';
 const Header = () =>{
     return(
         <Menu secondary pointing>
-            <Menu.Item >
-                <Link to='/'>Streams</Link>
+            <Menu.Item>
+                <Link to='/'>All Greetings</Link>
             </Menu.Item>
-
             <Menu.Item position='right'>
-                <Link to='/'> All Streams</Link>
-                
+                <GoogleAuth/>
             </Menu.Item>
-            <GoogleAuth/>
+            
         </Menu>
     );
 }

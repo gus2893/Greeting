@@ -2,6 +2,8 @@ import React from 'react';
 import {connect } from 'react-redux';
 import {fetchStreams} from '../../actions';
 import {Link} from 'react-router-dom';
+import { Container, Grid, Divider} from 'semantic-ui-react';
+import PostCard from '../PostCard';
 
 class StreamList extends React.Component{
     componentDidMount = () =>{
@@ -10,17 +12,7 @@ class StreamList extends React.Component{
 
     renderAdmin = (stream) =>{
         if(stream.userId === this.props.currentUserId){
-            return(
-                <div className="right floated content">
-                    <Link to={`/streams/edit/${stream.id}`}className="ui button primary">
-                        Edit
-                    </Link>
-                    <button className="ui button negative">
-                        Delete
-                    </button>
-                </div>
-                
-            )
+
         }
 
     }
@@ -28,27 +20,32 @@ class StreamList extends React.Component{
     renderCreate = () =>{
         if(this.props.isSignedIn){
             return (
-                <div style={{textAlign: 'right'}}>
+                <div>
                     <Link to="/streams/new" className= "ui button primary">
-                        Create Stream
+                        Add a Greeting!
                     </Link>
                 </div>
             )
         }
+        
+        return <h3>Sign in to add a Greeting!</h3>
     }
 
     renderList = () =>{
         return this.props.streams.map(stream =>{
             return (
-                <div className="item" key={stream.id}>
+            <div className="item" key={stream.id}>
+                <PostCard 
+                id={stream.id}
+                imgUri={stream.imgUri} 
+                name={stream.title}
+                message={stream.description}
+                userLocation={stream.userLocation}
+                currentTime={stream.currentTime}
+                />
                 {this.renderAdmin(stream)}
-                    <i className="large middle aligned icon camera"/>
-                    <div className="content">
-                        {stream.title}
-                        <div className = "description">{stream.description}</div>
-                    </div>
                     
-                </div>
+            </div>
             );
         })
     }
@@ -57,11 +54,17 @@ class StreamList extends React.Component{
     render(){
 
         return (
-            <div>
-                <h2>Streams</h2>
-                <div className="ui celled list">{this.renderList()}</div>
+            <Container textAlign="center">
+                <h2>Greetings</h2>
                 {this.renderCreate()}
-            </div>
+                <Divider horizontal>Current Greetings</Divider>
+                <br/>
+                <Grid centered columns={1}>
+                    {this.renderList()}
+                </Grid>
+                    
+                
+            </Container>
         )
     }
     
