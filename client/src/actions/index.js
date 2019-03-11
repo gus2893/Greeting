@@ -73,7 +73,7 @@ export const trySignOut = () => async dispatch =>{
         type: CREATE_STREAM,
         payload: response.data
     })
-    history.push('/');
+    history.push('/Greeting/');
  }
 
  export const fetchStreams = () => async dispatch =>{
